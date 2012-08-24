@@ -9,7 +9,7 @@ gem 'mysql2'
 gem 'haml-rails'
 gem 'hpricot'
 gem 'ruby_parser'
-
+gem 'therubyracer'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -23,6 +23,9 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+# Add gem
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

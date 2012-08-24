@@ -1,25 +1,26 @@
 %p#notice= notice
+%h1 Персональные данные пациента
 %p
-  %b First name:
+  %b Имя:
   = @person.first_name
 %p
-  %b Last name:
+  %b Фамилия:
   = @person.last_name
 %p
-  %b Surname:
+  %b Отчество:
   = @person.surname
 %p
-  %b Birthday:
+  %b Дата рождения:
   = @person.birthday
 %p
-  %b Card number:
+  %b Номер карты:
   = @person.card_number
 %p
-  %b Service place:
+  %b Место службы:
   = @person.service_place
 %p
-  %b Rank:
+  %b Звание:
   = @person.rank
-= link_to 'Edit', edit_person_path(@person)
+= link_to 'Редактировать', edit_person_path(@person), :class =>'btn'
 |
-\#{link_to 'Back', people_path}
+\#{link_to 'Вернуться', people_path, :class => 'btn'}

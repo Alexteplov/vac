@@ -1,0 +1,27 @@
+%h1 Listing vaccines
+
+%table
+  %tr
+    %th Name
+    %th Fact
+    %th Planning
+    %th Periodic
+    %th Plan
+    %th
+    %th
+    %th
+
+  - @vaccines.each do |vaccine|
+    %tr
+      %td= vaccine.name
+      %td= vaccine.fact
+      %td= vaccine.planning
+      %td= vaccine.periodic
+      %td= vaccine.plan
+      %td= link_to 'Show', vaccine,:class => 'btn'
+      %td= link_to 'Edit', edit_vaccine_path(vaccine),:class => 'btn'
+      %td= link_to 'Destroy', vaccine, :confirm => 'Are you sure?', :method => :delete,:class => 'btn'
+
+%br
+
+= link_to 'New Vaccine', new_vaccine_path,:class => 'btn'

@@ -1,13 +1,13 @@
-%h1 Listing people
+%h1 Вакцинация
 %table
   %tr
-    %th First name
-    %th Last name
-    %th Surname
-    %th Birthday
-    %th Card number
-    %th Service place
-    %th Rank
+    %th Имя
+    %th Фамилия
+    %th Отчество
+    %th Дата рождения
+    %th Номер карты
+    %th Место службы
+    %th Звание
     %th
     %th
     %th
@@ -20,8 +20,8 @@
       %td= person.card_number
       %td= person.service_place
       %td= person.rank
-      %td= link_to 'Show', person
-      %td= link_to 'Edit', edit_person_path(person)
-      %td= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' }
+      %td= link_to 'Показать', person, :class =>'btn'
+      %td= link_to 'Редактирование', edit_person_path(person), :class =>'btn'
+      %td= link_to 'Удалить', person, method: :delete, data: { confirm: 'Are you sure?' }, :class =>'btn'
 %br/
-= link_to 'New Person', new_person_path
+= link_to 'Добавить нового пациента', new_person_path, :class => 'btn'
