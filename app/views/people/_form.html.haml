@@ -22,7 +22,8 @@
   .field
     = f.label 'Дата рождения'
     %br/
-    = f.date_select :birthday, :start_year =>1900
+    = f.date_select :birthday, :start_year =>1900, :prompt => { :day => 'День', :month => 'Месяц', :year => 'Год' }, 
+	:use_month_names =>['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь',]
   .field
     = f.label 'Номер карты'
     %br/

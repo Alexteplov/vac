@@ -1,12 +1,12 @@
-%h1 Listing vaccines
+%h1 Список вакцин
 
 %table
   %tr
-    %th Name
-    %th Fact
-    %th Planning
-    %th Periodic
-    %th Plan
+    %th Наименование
+    %th Дата факта
+    %th Планированние
+    %th Период
+    %th План
     %th
     %th
     %th
@@ -18,10 +18,11 @@
       %td= vaccine.planning
       %td= vaccine.periodic
       %td= vaccine.plan
-      %td= link_to 'Show', vaccine,:class => 'btn'
-      %td= link_to 'Edit', edit_vaccine_path(vaccine),:class => 'btn'
-      %td= link_to 'Destroy', vaccine, :confirm => 'Are you sure?', :method => :delete,:class => 'btn'
+      %td= link_to 'Отобразить вакцину', vaccine,:class => 'btn'
+      %td= link_to 'Редактировать', edit_vaccine_path(vaccine),:class => 'btn'
+      %td= link_to 'Удалить', vaccine, :confirm => 'Are you sure?', :method => :delete,:class => 'btn'
 
 %br
 
-= link_to 'New Vaccine', new_vaccine_path,:class => 'btn'
+= link_to 'Новая вакцина', new_vaccine_path,:class => 'btn'
+= link_to 'Отобразить список пациентов', people_path,:class => 'btn'
