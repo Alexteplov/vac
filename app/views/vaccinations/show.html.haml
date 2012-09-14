@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Person:
+  = @vaccination.person_id
+%p
+  %b Vaccine:
+  = @vaccination.vaccine_id
+%p
+  %b Plan:
+  = @vaccination.plan
+%p
+  %b Fact:
+  = @vaccination.fact
+
+= link_to 'Edit', edit_vaccination_path(@vaccination)
+\|
+= link_to 'Back', person_vaccinations_path(@person)

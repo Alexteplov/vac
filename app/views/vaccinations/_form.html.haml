@@ -1,0 +1,21 @@
+= form_for [:person, @vaccination] do |f|
+  -if @vaccination.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@vaccination.errors.count, "error")} prohibited this vaccination from being saved:"
+      %ul
+        - @vaccination.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label 'Имя'
+    = @person.name
+  .field
+    = f.label :vaccine_id
+    = f.select :vaccine_id, options_from_collection_for_select(Vaccine.all, "id", "name")
+  .field
+    = f.label :plan
+    = f.date_select :plan
+  .field
+    = f.label :fact
+    = @vaccination.fact
+  .actions
+    = f.submit 'Save'

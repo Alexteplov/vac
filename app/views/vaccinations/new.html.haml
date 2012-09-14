@@ -1,0 +1,6 @@
+%h1 Назначить новую вакцинацию
+
+= render 'form'
+
+-if @person
+  = link_to 'Вернуться', person_vaccinations_path(@person)

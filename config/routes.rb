@@ -1,7 +1,15 @@
 Vac::Application.routes.draw do
+  
+
+  resources :vaccinations do
+   put 'apply_vaccine'
+  end
+
   resources :vaccines
 
-  resources :people
+  resources :people do
+    resources :vaccinations
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

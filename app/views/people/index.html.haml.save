@@ -1,6 +1,6 @@
 %h1 Вакцинация
 = link_to 'Список вакцин', vaccines_path,:class => 'btn'
-%table.table.table-striped
+%table
   %tr
     %th Фамилия
     %th Имя
@@ -23,7 +23,7 @@
       %td= person.card_number
       %td= person.service_place
       %td= person.rank
-      %td= link_to 'Вакцины', person_vaccinations_path(person), :class =>'btn'
+      %td= link_to 'Вакцины',person_vaccinations_path, :class =>'btn'
       %td= link_to 'Показать', person, :class =>'btn'
       %td= link_to 'Редактирование', edit_person_path(person), :class =>'btn'
       %td= link_to 'Удалить', person, method: :delete, data: { confirm: 'Are you sure?' }, :class =>'btn'

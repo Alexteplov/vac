@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  person_id: 1
+  vaccine_id: 1
+  plan: 2012-08-30
+  fact: 2012-08-30
+
+two:
+  person_id: 1
+  vaccine_id: 1
+  plan: 2012-08-30
+  fact: 2012-08-30

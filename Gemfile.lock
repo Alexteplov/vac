@@ -57,6 +57,7 @@ GEM
       haml (~> 3.0)
       railties (~> 3.0)
     hike (1.2.1)
+    hirb (0.7.0)
     hpricot (0.8.6)
     i18n (0.6.0)
     journey (1.0.4)
@@ -133,6 +134,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
   haml-rails
+  hirb
   hpricot
   jquery-rails
   mysql2

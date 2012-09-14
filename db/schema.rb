@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120823075610) do
+ActiveRecord::Schema.define(:version => 20120830074036) do
 
   create_table "people", :force => true do |t|
     t.string   "first_name"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(:version => 20120823075610) do
     t.string   "rank"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+  end
+
+  create_table "vaccinations", :force => true do |t|
+    t.integer  "person_id"
+    t.integer  "vaccine_id"
+    t.date     "plan"
+    t.date     "fact"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "vaccines", :force => true do |t|
