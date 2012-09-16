@@ -48,8 +48,9 @@ class VaccinationsController < ApplicationController
   # POST /vaccinations
   # POST /vaccinations.json
   def create
-    @vaccination = Vaccination.new(params[:vaccination])
-
+    if params[:person_id]
+      @person = Person.find(params[:person_id])
+      @vaccination =@person.vaccinations.new(params[:vaccination])
     respond_to do |format|
       if @vaccination.save
         format.html { redirect_to @vaccination, notice: 'Vaccination was successfully created.' }
@@ -59,7 +60,8 @@ class VaccinationsController < ApplicationController
         format.json { render json: @vaccination.errors, status: :unprocessable_entity }
       end
     end
-  end
+  end 
+ end
 
   # PUT /vaccinations/1
   # PUT /vaccinations/1.json
@@ -80,12 +82,17 @@ class VaccinationsController < ApplicationController
   # DELETE /vaccinations/1
   # DELETE /vaccinations/1.json
   def destroy
+#    if params[:person_id]
+      @person = Person.find(params[:person_id])
+#      @vaccination =@person.vaccinations.find(params[:id])
     @vaccination = Vaccination.find(params[:id])
     @vaccination.destroy
 
     respond_to do |format|
-      format.html { redirect_to vaccinations_url }
+      format.html { redirect_to @person.vaccinations}
+#vaccinations_url }
       format.json { head :no_content }
     end
-  end
+#  end
+end
 end
