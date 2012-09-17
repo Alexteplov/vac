@@ -83,16 +83,16 @@ class VaccinationsController < ApplicationController
   # DELETE /vaccinations/1.json
   def destroy
 #    if params[:person_id]
-      @person = Person.find(params[:person_id])
+
 #      @vaccination =@person.vaccinations.find(params[:id])
     @vaccination = Vaccination.find(params[:id])
+    @person = @vaccination.person
     @vaccination.destroy
 
     respond_to do |format|
-      format.html { redirect_to @person.vaccinations}
-#vaccinations_url }
+      format.html { redirect_to person_vaccinations_path(@person)}
       format.json { head :no_content }
     end
-#  end
-end
+
+  end
 end
