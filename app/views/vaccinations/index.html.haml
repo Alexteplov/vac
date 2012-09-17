@@ -1,26 +1,34 @@
-%h1 Назначенные прививки
+.page-header
+  %h2 Назначенные прививки
+- if @vaccinations.any?
+  .row
+    
+    %table.table-bordered.table-striped
+      %tr
+        %th Person
+        %th Vaccine
+        %th Plan
+        %th Fact
+        %th
+        %th
+        %th
 
-%table
-  %tr
-    %th Person
-    %th Vaccine
-    %th Plan
-    %th Fact
-    %th
-    %th
-    %th
+      - @vaccinations.each do |vaccination|
+        %tr
+          %td= vaccination.person.last_name
+          %td= vaccination.vaccine.name
+          %td= vaccination.plan
+          %td= vaccination.fact
+          %td= link_to 'Show', vaccination
+          %td= link_to 'Edit', edit_vaccination_path(vaccination)
+          %td= link_to 'Destroy', vaccination, :confirm => 'Вы уверены?', :method => :delete
+- else
+  .alert.alert-error
+    Нет назначенных вакцин
 
-  - @vaccinations.each do |vaccination|
-    %tr
-      %td= vaccination.person.last_name
-      %td= vaccination.vaccine.name
-      %td= vaccination.plan
-      %td= vaccination.fact
-      %td= link_to 'Show', vaccination
-      %td= link_to 'Edit', edit_vaccination_path(vaccination)
-      %td= link_to 'Destroy', vaccination, :confirm => 'Вы уверены?', :method => :delete
 
-%br
 
 - if @person
-  = link_to 'Назначить вакцинацию', new_person_vaccination_path(@person)
+  .row
+    .span12
+      = link_to 'Назначить вакцинацию', new_person_vaccination_path(@person), :class => 'btn'
