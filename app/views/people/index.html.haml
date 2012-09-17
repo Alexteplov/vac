@@ -7,6 +7,7 @@
   .span12
     %table.table.table-striped.table-bordered
       %tr
+
         %th Фамилия
         %th Имя
         %th Отчество
@@ -23,7 +24,7 @@
           %td= person.last_name
           %td= person.first_name
           %td= person.surname
-          %td= person.birthday
+          %td= person.birthday.strftime('%d.%m.%Y') if person.birthday
           %td= person.card_number
           %td= person.service_place
           %td= person.rank
