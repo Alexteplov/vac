@@ -2,9 +2,6 @@
   %h2 Вакцинация
 .row
   .span12
-    = link_to 'Список вакцин', vaccines_path,:class => 'btn', :style => 'margin-bottom: 10px'
-.row
-  .span12
     %table.table.table-striped.table-bordered
       %tr
 
@@ -14,7 +11,7 @@
         %th Дата рождения
         %th Номер карты
         %th Место службы
-        %th Звание
+        %th Должность
         %th
         
       
@@ -42,7 +39,7 @@
                   = link_to 'Редактирование', edit_person_path(person), :tabindex => "-1"
                 %li.divider
                 %li
-                  = link_to 'Удалить', person, method: :delete, data: { confirm: 'Are you sure?' }, :tabindex => "-1"
+                  = link_to 'Удалить', person, method: :delete, data: { confirm: 'Вы действительно хотите удалить пациента?' }, :tabindex => "-1"
           
     %br/
     = link_to 'Добавить нового пациента', new_person_path, :class => 'btn'

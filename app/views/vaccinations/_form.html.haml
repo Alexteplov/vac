@@ -9,13 +9,14 @@
     = f.label 'Имя'
     = @person.name
   .field
-    = f.label :vaccine_id
+    = f.label 'Наименование вакцины'
     = f.select :vaccine_id, options_from_collection_for_select(Vaccine.all, "id", "name")
   .field
-    = f.label :plan
-    = f.date_select :plan
+    = f.label 'Планируемая дата начала вакцинации'
+    = f.date_select :plan, :prompt => { :day => 'День', :month => 'Месяц', :year => 'Год' }, 
+:use_month_names =>['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь',]
   .field
-    = f.label :fact
+    = f.label 'Фактическая дата вакцинации'
     = @vaccination.fact
   .actions
-    = f.submit 'Save'
+    = f.submit 'Сохранить изменения'
