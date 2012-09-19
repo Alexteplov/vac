@@ -10,16 +10,18 @@
     = f.label 'Наименование вакцины'
     = f.text_field :name
   .field
-    = f.label 'Факт'
-    = f.date_select :fact
+    = f.label 'Фактическая дата начала вакцинации'
+    = f.date_select :fact, :prompt => { :day => 'День', :month => 'Месяц', :year => 'Год' }, 
+:use_month_names =>['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь',]
   .field
-    = f.label :planning
+    = f.label 'Повторная вакцинация (в днях), разделение через запятую..'
     = f.text_field :planning
   .field
-    = f.label :periodic
+    = f.label 'Периодичность проведения вакцинации (к примеру каждые 3 года), период указывается в днях'
     = f.text_field :periodic
   .field
-    = f.label :plan
-    = f.date_select :plan
+    = f.label 'Планируемаая дата начала вакцинации'
+    = f.date_select :plan, :prompt => { :day => 'День', :month => 'Месяц', :year => 'Год' }, 
+:use_month_names =>['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь',]
   .actions
-    = f.submit 'Save'
+    = f.submit 'Сохранить изменения'
