@@ -19,7 +19,7 @@
         
       
       - @people.each do |person|
-        %tr
+        %tr{:class => ( ('warning' if person.warning?) || ('error' if person.error?) ) }
 
           %td= person.last_name
           %td= person.first_name
@@ -42,7 +42,7 @@
                   = link_to 'Редактирование', edit_person_path(person), :tabindex => "-1"
                 %li.divider
                 %li
-                  = link_to 'Удалить', person, method: :delete, data: { confirm: 'Are you sure?' }, :tabindex => "-1"
+                  = link_to "<span class ='label label-important'>Удалить</span>".html_safe, person, method: :delete, data: { confirm: 'Are you sure?' }, :tabindex => "-1", :class => 'btn-error'
           
     %br/
     = link_to 'Добавить нового пациента', new_person_path, :class => 'btn'

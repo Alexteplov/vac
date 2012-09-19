@@ -2,16 +2,16 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.2.8'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'hirb'
 gem 'mysql2'
 gem 'haml-rails'
 gem 'hpricot'
 gem 'ruby_parser'
 gem 'therubyracer'
-# Gems used only for assets and not required
-# in production environments by default.
+gem 'state_machine'
+
+
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
