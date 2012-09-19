@@ -5,23 +5,23 @@
     
     %table.table.table-bordered.table-striped
       %tr
-        %th Person
-        %th Vaccine
-        %th Plan
-        %th Fact
+        %th Ф.И.О
+        %th Название вакцины
+        %th Дата планируемой вакцинации
+        %th Дата фактической вакцинации
         %th
         %th
         %th
 
       - @vaccinations.each do |vaccination|
         %tr
-          %td= vaccination.person.last_name
+          %td= vaccination.person.name
           %td= vaccination.vaccine.name
           %td= vaccination.plan
           %td= vaccination.fact
-          %td= link_to 'Show', vaccination
-          %td= link_to 'Edit', edit_vaccination_path(vaccination)
-          %td= link_to 'Destroy', vaccination, :confirm => 'Вы уверены?', :method => :delete
+          %td= link_to 'Отобразить', vaccination
+          %td= link_to 'Редактировать', edit_vaccination_path(vaccination)
+          %td= link_to 'Удалить', vaccination, :confirm => 'Вы уверены?', :method => :delete
 - else
   .alert.alert-error
     Нет назначенных вакцин
