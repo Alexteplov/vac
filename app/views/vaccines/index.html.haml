@@ -1,14 +1,14 @@
 .page-header
-  %h2 Список вакцин
+  %h2 Список вакцин в МСЧ учасвтующих в вакцинации
 .row
   .span12
     %table.table.table-bordered.table-striped
       %tr
         %th Наименование
-        %th Дата факта
-        %th Планированние
-        %th Период
-        %th План
+        %th Дата производства вакцины
+        %th Схема вакцинации(в днях)
+        %th Пероиодика вакцинации(в днях)
+        %th Дата истечения срока годности
         %th
         %th
         %th
@@ -22,7 +22,7 @@
           %td= vaccine.plan
           %td= link_to 'Отобразить вакцину', vaccine,:class => 'btn'
           %td= link_to 'Редактировать', edit_vaccine_path(vaccine),:class => 'btn'
-          %td= link_to 'Удалить', vaccine, :confirm => 'Are you sure?', :method => :delete,:class => 'btn'
+          %td= link_to 'Удалить', vaccine, :confirm => 'Вы уверены?', :method => :delete,:class => 'btn'
 
     %br
 
