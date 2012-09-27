@@ -42,8 +42,9 @@ class VaccinationsController < ApplicationController
 
   # GET /vaccinations/1/edit
   def edit
-
     @vaccination = Vaccination.find(params[:id])
+    @person = @vaccination.person
+
   end
 
   # POST /vaccinations
