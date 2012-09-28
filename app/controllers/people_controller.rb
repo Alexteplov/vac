@@ -3,7 +3,7 @@ class PeopleController < ApplicationController
   # GET /people.json
   def index
     @people = Person.order('id desc')
-
+    @people_count = Person.count
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @people }
