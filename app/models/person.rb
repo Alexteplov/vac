@@ -27,9 +27,26 @@ class Person < ActiveRecord::Base
     end
   end
 
-  # def success?
-  #   vaccinations.map(&:plan).each do |plan|
+  def success?
+    if warning?
+      false
+    elsif error?
+      false
+    else
+      true
+    end
+  end
       
+  def vac_state
+    if success?
+      'success'
+    elsif error?
+      'error'
+    elsif warning?
+      'warning'
+    end
+  end
+
 
   
 
