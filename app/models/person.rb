@@ -20,7 +20,7 @@ class Person < ActiveRecord::Base
   end
 
   def error?
-  	vaccinations.map(&:plan).each do |plan|
+    vaccinations.map(&:plan).each do |plan|
       if plan
         return true if plan < DateTime.now
       end
