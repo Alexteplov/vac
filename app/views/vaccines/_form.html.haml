@@ -11,7 +11,7 @@
     = f.text_field :name
   .field
     = f.label 'Фактическая дата начала вакцинации'
-    = f.date_select :fact, :prompt => { :day => 'День', :month => 'Месяц', :year => 'Год' }, 
+    = f.date_select :fact, :start_year => 1990, :prompt => { :day => 'День', :month => 'Месяц', :year => 'Год' }, 
 :use_month_names =>['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь',]
   .field
     = f.label 'Повторная вакцинация (в днях), разделение через запятую..'
@@ -21,7 +21,7 @@
     = f.text_field :periodic
   .field
     = f.label 'Планируемаая дата начала вакцинации'
-    = f.date_select :plan, :prompt => { :day => 'День', :month => 'Месяц', :year => 'Год' }, 
+    = f.date_select :plan, :start_year => 1990, :prompt => { :day => 'День', :month => 'Месяц', :year => 'Год' }, 
 :use_month_names =>['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь',]
   .actions
     = f.submit 'Сохранить изменения'

@@ -1,0 +1,1 @@
+kill -9 `pgrep -fl 'script/rails s' | awk '{print $1}'`
