@@ -2,6 +2,10 @@
   %h2 Вакцинация
 Общее колличество пациентов:
 = @people_count
+%br
+= link_to 'Добавить нового пациента', new_person_path, :class => 'btn'
+%br
+%br
 .row
   .span12
     %table.table.table-striped.table-bordered
