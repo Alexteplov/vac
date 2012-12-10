@@ -9,6 +9,9 @@
         %th Название вакцины
         %th Дата планируемой вакцинации
         %th Дата фактической вакцинации
+        %th Первая прививка
+        %th Вторая прививка
+        %th Периодическая прививка
         %th
         %th
         %th
@@ -19,6 +22,9 @@
           %td= vaccination.vaccine.name
           %td= vaccination.plan
           %td= vaccination.fact
+          %td
+          %td
+          %td
           %td= link_to 'Отобразить', vaccination
           %td= link_to 'Редактировать', edit_vaccination_path(vaccination)
           %td= link_to 'Удалить', vaccination, :confirm => 'Вы уверены?', :method => :delete
