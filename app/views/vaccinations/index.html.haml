@@ -35,7 +35,7 @@
                   = link_to 'Редактировать', edit_vaccination_path(vaccination), :tabindex => "-1"
                 %li.divider
                 %li
-                  = link_to "<span class ='label label-important'>Удалить</span>".html_safe, vaccination, method: :delete, data: { confirm: 'Вы действительно хотите удалить пациента?' }, :tabindex => "-1", :class => 'btn-error'
+                  = link_to "<span class ='label label-important'>Удалить</span>".html_safe, vaccination, method: :delete, data: { confirm: 'Вы действительно хотите удалить вакцинацию пациента?' }, :tabindex => "-1", :class => 'btn-error'
 - else
   .alert.alert-error
     Нет назначенных вакцин
