@@ -1,7 +1,11 @@
 .page-header
-  %h2 Вакцинация
-Общее колличество пациентов:
-= @people_count
+%table{:border => "0", :width => "100%"}
+  %th
+    %td
+      %h2 Вакцинация
+      %td{:align => "right", :valign => "bottom"}
+        Общее колличество пациентов: 
+        =@people_count 
 %br
 = link_to 'Добавить нового пациента', new_person_path, :class => 'btn'
 %br
